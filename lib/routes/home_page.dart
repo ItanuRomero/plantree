@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plantree/routes.dart';
 import 'package:plantree/widgets/home/home_drawer.dart';
 import 'package:plantree/widgets/home/tree_card.dart';
 
@@ -55,21 +56,11 @@ class _MyHomePageState extends State<MyHomePage> {
             return Center(child: TreeCard(id: index.toString()));
           }),
         ),
-        /* child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Apertou o botão quantas vezes:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ), */
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          Navigator.of(context).pushNamed(RouteGenerator.randomPage);
+        },
         tooltip: 'Adicionar árvore',
         child: const Icon(Icons.add),
       ),
