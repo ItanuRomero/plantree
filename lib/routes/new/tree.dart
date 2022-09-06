@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:plantree/widgets/new/tree/form.dart';
 
-class RandomPage extends StatelessWidget {
-  const RandomPage({super.key});
+class NewTreePage extends StatelessWidget {
+  const NewTreePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          child: const Text("Random"),
-        ),
+      appBar: AppBar(
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: const Text('Inserir nova árvore'),
       ),
+      body: const NewTreeForm(),
     );
   }
 }

@@ -4,8 +4,8 @@ import 'package:plantree/routes/new/tree.dart';
 
 class RouteGenerator {
   static const String homePage = '/';
-  static const String randomPage = "/random";
-  RouteGenerator._() {}
+  static const String randomPage = "/new/tree";
+  RouteGenerator._();
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case homePage:
@@ -16,7 +16,7 @@ class RouteGenerator {
         );
       case randomPage:
         return MaterialPageRoute(
-          builder: (_) => const RandomPage(),
+          builder: (_) => const NewTreePage(),
         );
       default:
         throw const FormatException("Rota não encontrada");
