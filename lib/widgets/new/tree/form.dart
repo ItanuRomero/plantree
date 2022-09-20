@@ -22,6 +22,7 @@ class NewTreeFormState extends State<NewTreeForm> {
           TextFormField(
             decoration: const InputDecoration(
               contentPadding: EdgeInsets.symmetric(horizontal: 10),
+              icon: Icon(Icons.yard)
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
