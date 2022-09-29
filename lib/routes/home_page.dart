@@ -41,12 +41,15 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: GridView.count(
-          crossAxisCount: 2,
-          children: List.generate(6, (index) {
-            return Center(child: TreeCard(id: index.toString()));
-          }),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        child: Center(
+          child: GridView.count(
+            crossAxisCount: 2,
+            children: List.generate(6, (index) {
+              return Center(child: TreeCard(id: index.toString()));
+            }),
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(

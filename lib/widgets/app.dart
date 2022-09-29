@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:plantree/routes.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class PlanTree extends StatelessWidget {
+  const PlanTree({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:plantree/widgets/my_app.dart';
+import 'package:plantree/widgets/app.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const PlanTree());
 }
