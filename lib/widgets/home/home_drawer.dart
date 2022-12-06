@@ -17,7 +17,14 @@ class HomeDrawer extends StatelessWidget {
             child: Text('Meu perfil'),
           ),
           ListTile(
-            title: const Text('Quantas árvores plantei'),
+            title: const Text('Minhas árvores'),
+            onTap: () {
+              // Update the state of the app.
+              // ...
+            },
+          ),
+          ListTile(
+            title: const Text('Meus locais de plantio'),
             onTap: () {
               // Update the state of the app.
               // ...

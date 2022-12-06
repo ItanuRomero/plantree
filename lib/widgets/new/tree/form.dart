@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 // Define a custom Form widget.
 class NewTreeForm extends StatefulWidget {
@@ -12,6 +13,14 @@ class NewTreeForm extends StatefulWidget {
 
 class NewTreeFormState extends State<NewTreeForm> {
   final _formKey = GlobalKey<FormState>();
+  TextEditingController dateinput = TextEditingController();
+  //text editing controller for text field
+
+  @override
+  void initState() {
+    dateinput.text = ""; //set the initial value of text field
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +54,9 @@ class NewTreeFormState extends State<NewTreeForm> {
                   ),
                   TextFormField(
                     decoration: const InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(horizontal: 10),
-                      icon: Icon(Icons.telegram, color: Colors.green),
-                    ),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                        icon: Icon(Icons.telegram, color: Colors.green),
+                        hintText: 'Insira uma descrição'),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Escreva';
@@ -55,6 +64,34 @@ class NewTreeFormState extends State<NewTreeForm> {
                       return null;
                     },
                   ),
+                  TextField(
+                      controller:
+                          dateinput, //editing controller of this TextField
+                      decoration: const InputDecoration(
+                          icon: Icon(Icons.calendar_today), //icon of text field
+                          labelText:
+                              "Insira a data do plantio" //label text of field
+                          ),
+                      readOnly:
+                          true, //set it true, so that user will not able to edit text
+                      onTap: () async {
+                        DateTime? pickedDate = await showDatePicker(
+                            context: context,
+                            initialDate: DateTime.now(),
+                            firstDate: DateTime(
+                                2000), //DateTime.now() - not to allow to choose before today.
+                            lastDate: DateTime.now());
+
+                        if (pickedDate != null) {
+                          //pickedDate output format => 2021-03-10 00:00:00.000
+                          String formattedDate =
+                              DateFormat('yyyy-MM-dd').format(pickedDate);
+                          setState(() {
+                            dateinput.text =
+                                formattedDate; //set output date to TextField value.
+                          });
+                        } else {}
+                      }),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 16.0),
                     child: ElevatedButton(

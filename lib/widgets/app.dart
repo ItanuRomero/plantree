@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:plantree/routes.dart';
 
 class PlanTree extends StatelessWidget {
@@ -10,10 +11,16 @@ class PlanTree extends StatelessWidget {
     return MaterialApp(
       title: 'PlanTree',
       theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
+          primarySwatch: Colors.green,
+          appBarTheme: const AppBarTheme(
+            systemOverlayStyle: SystemUiOverlayStyle(
+              statusBarColor: Colors.green,
+              statusBarIconBrightness: Brightness.dark,
+              statusBarBrightness: Brightness.light,
+            ),
+          )),
       onGenerateTitle: (context) => "PlanTree",
-      initialRoute: RouteGenerator.homePage,
+      initialRoute: RouteGenerator.startPage,
       onGenerateRoute: RouteGenerator.generateRoute,
       debugShowCheckedModeBanner: false,
     );
