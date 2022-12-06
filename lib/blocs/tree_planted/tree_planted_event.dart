@@ -1,11 +1,7 @@
 part of 'tree_planted_bloc.dart';
 
-@immutable
 abstract class TreePlantedEvent extends Equatable {
   const TreePlantedEvent();
-
-  @override
-  List<Object> get props => [];
 }
 
 //eventos que serão enviados para a entrada do bloc

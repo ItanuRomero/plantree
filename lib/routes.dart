@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:plantree/routes/home_page.dart';
-import 'package:plantree/routes/login.dart';
+import 'package:plantree/routes/login/login.dart';
 import 'package:plantree/routes/new/tree.dart';
-import 'package:plantree/routes/register.dart';
+import 'package:plantree/routes/register/register.dart';
 import 'package:plantree/routes/start.dart';
 
 class RouteGenerator {
@@ -22,13 +22,13 @@ class RouteGenerator {
         );
       case loginPage:
         return MaterialPageRoute(
-          builder: (_) => const Login(
+          builder: (_) => Login(
             title: 'Login',
           ),
         );
       case registerPage:
         return MaterialPageRoute(
-          builder: (_) => const Register(
+          builder: (_) => Register(
             title: 'Cadastre-se',
           ),
         );

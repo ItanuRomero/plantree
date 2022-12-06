@@ -5,18 +5,18 @@ class TreePlanted extends Equatable {
   final String name;
   final String description;
   final String date;
-  final int treeId;
+  final String tree;
   final int userId;
-  final int localId;
+  final String local;
 
   const TreePlanted(
       {required this.id,
       required this.name,
       required this.description,
       required this.date,
-      required this.treeId,
+      required this.tree,
       required this.userId,
-      required this.localId});
+      required this.local});
 
   factory TreePlanted.fromJson(Map<String, dynamic> json) {
     return TreePlanted(
@@ -24,11 +24,10 @@ class TreePlanted extends Equatable {
         name: json['name'],
         description: json['description'] ?? "",
         date: json['date'],
-        treeId: json['tree_id'],
-        localId: json['local_id'],
+        tree: json['tree'],
+        local: json['local'],
         userId: json['user_id']);
   }
   @override
-  List<Object> get props =>
-      [id, name, description, date, treeId, localId, userId];
+  List<Object> get props => [id, name, description, date, tree, local, userId];
 }
